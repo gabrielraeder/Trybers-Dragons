@@ -22,7 +22,7 @@ export default class PVE extends Battle {
     let turn = 0;
     let monster = 0;
     while (this.char.lifePoints > 0 && this
-      .monsters.every((i) => i.lifePoints > 0)) {
+      .monsters.some((i) => i.lifePoints > 0)) {
       this.turns(turn, monster);
       monster = monster === this.monsters.length - 1 ? 0 : monster + 1;
       turn += 1;
